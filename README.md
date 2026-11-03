@@ -20,14 +20,12 @@
 
 ## Team details (fill in before you start)
 
-| Role | Name | Enrollment No. | GitHub Username |
-|------|------|----------------|-----------------|
-| Group Lead | | | |
-| Member 2 | | | |
-| Member 3 | | | |
-| Member 4 | | | |
+Role	Name	Enrollment No.	GitHub Username
+Group Lead	Sanprit Danav	2501010405	Sanprit07
+Member 2	Lakshay Sharma	2501010247	
+Member 3	Ariv Gupta	2501010077	
 
-**Team No.:** ____ · **Section:** ____ · **Repository URL:** ____
+Team No.: T0003 · Section: D · Repository URL: https://github.com/Sanprit07/DE_Project_2026
 
 ---
 

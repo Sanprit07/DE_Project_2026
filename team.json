@@ -1,0 +1,23 @@
+
+{
+  "team_number": "T0003",
+  "group_lead": {
+    "name": "Sanprit Danav",
+    "enrollment_no": "2501010405",
+    "github": "Sanprit07"
+  },
+  "members": [
+    {
+      "name": "Lakshay Sharma",
+      "enrollment_no": "2501010247",
+      "github": ""
+    },
+    {
+      "name": "Ariv Gupta",
+      "enrollment_no": "2501010077",
+      "github": ""
+    }
+  ],
+  "postgres_version": "15",
+  "laptop_used_for_benchmarks": ""
+}
