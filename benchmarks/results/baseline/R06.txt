@@ -1,0 +1,75 @@
+=== R06 run 1 ===
+Sort  (cost=5240.67..5240.67 rows=1 width=25) (actual time=10.935..11.978 rows=1.00 loops=1)
+  Sort Key: o.ordered_at
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=2222
+  ->  Gather  (cost=1000.29..5240.66 rows=1 width=25) (actual time=10.440..11.963 rows=1.00 loops=1)
+        Workers Planned: 1
+        Workers Launched: 1
+        Buffers: shared hit=2219
+        ->  Nested Loop  (cost=0.29..4240.56 rows=1 width=25) (actual time=7.823..8.034 rows=0.50 loops=2)
+              Buffers: shared hit=2219
+              ->  Parallel Seq Scan on order_items oi  (cost=0.00..3556.71 rows=93 width=17) (actual time=0.105..7.463 rows=71.00 loops=2)
+                    Filter: (seller_id = 217)
+                    Rows Removed by Filter: 119929
+                    Buffers: shared hit=1792
+              ->  Index Scan using orders_pkey on orders o  (cost=0.29..7.35 rows=1 width=12) (actual time=0.008..0.008 rows=0.01 loops=142)
+                    Index Cond: (order_id = oi.order_id)
+                    Filter: (date_trunc('month'::text, ordered_at) = '2026-06-01 00:00:00'::timestamp without time zone)
+                    Rows Removed by Filter: 1
+                    Index Searches: 142
+                    Buffers: shared hit=427
+Planning:
+  Buffers: shared hit=220
+Planning Time: 0.626 ms
+Execution Time: 12.028 ms
+=== R06 run 2 ===
+Sort  (cost=5240.67..5240.67 rows=1 width=25) (actual time=8.557..9.668 rows=1.00 loops=1)
+  Sort Key: o.ordered_at
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=2222
+  ->  Gather  (cost=1000.29..5240.66 rows=1 width=25) (actual time=8.196..9.647 rows=1.00 loops=1)
+        Workers Planned: 1
+        Workers Launched: 1
+        Buffers: shared hit=2219
+        ->  Nested Loop  (cost=0.29..4240.56 rows=1 width=25) (actual time=6.453..6.602 rows=0.50 loops=2)
+              Buffers: shared hit=2219
+              ->  Parallel Seq Scan on order_items oi  (cost=0.00..3556.71 rows=93 width=17) (actual time=0.064..6.251 rows=71.00 loops=2)
+                    Filter: (seller_id = 217)
+                    Rows Removed by Filter: 119929
+                    Buffers: shared hit=1792
+              ->  Index Scan using orders_pkey on orders o  (cost=0.29..7.35 rows=1 width=12) (actual time=0.005..0.005 rows=0.01 loops=142)
+                    Index Cond: (order_id = oi.order_id)
+                    Filter: (date_trunc('month'::text, ordered_at) = '2026-06-01 00:00:00'::timestamp without time zone)
+                    Rows Removed by Filter: 1
+                    Index Searches: 142
+                    Buffers: shared hit=427
+Planning:
+  Buffers: shared hit=220
+Planning Time: 0.804 ms
+Execution Time: 9.729 ms
+=== R06 run 3 ===
+Sort  (cost=5240.67..5240.67 rows=1 width=25) (actual time=8.146..9.081 rows=1.00 loops=1)
+  Sort Key: o.ordered_at
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=2222
+  ->  Gather  (cost=1000.29..5240.66 rows=1 width=25) (actual time=8.100..9.067 rows=1.00 loops=1)
+        Workers Planned: 1
+        Workers Launched: 1
+        Buffers: shared hit=2219
+        ->  Nested Loop  (cost=0.29..4240.56 rows=1 width=25) (actual time=6.342..6.488 rows=0.50 loops=2)
+              Buffers: shared hit=2219
+              ->  Parallel Seq Scan on order_items oi  (cost=0.00..3556.71 rows=93 width=17) (actual time=0.285..6.137 rows=71.00 loops=2)
+                    Filter: (seller_id = 217)
+                    Rows Removed by Filter: 119929
+                    Buffers: shared hit=1792
+              ->  Index Scan using orders_pkey on orders o  (cost=0.29..7.35 rows=1 width=12) (actual time=0.005..0.005 rows=0.01 loops=142)
+                    Index Cond: (order_id = oi.order_id)
+                    Filter: (date_trunc('month'::text, ordered_at) = '2026-06-01 00:00:00'::timestamp without time zone)
+                    Rows Removed by Filter: 1
+                    Index Searches: 142
+                    Buffers: shared hit=427
+Planning:
+  Buffers: shared hit=220
+Planning Time: 0.598 ms
+Execution Time: 9.128 ms

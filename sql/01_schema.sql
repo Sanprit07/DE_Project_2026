@@ -68,7 +68,7 @@ CREATE TABLE sellers (
     seller_rating NUMERIC(2,1)
         CHECK (seller_rating BETWEEN 0 AND 5),
     status VARCHAR(20) NOT NULL
-        CHECK (status IN ('ACTIVE','INACTIVE','SUSPENDED')),
+        CHECK (status IN ('ACTIVE','INACTIVE','SUSPENDED','CLOSED')),
 
     CONSTRAINT fk_seller_city
         FOREIGN KEY (city_id)
@@ -140,7 +140,7 @@ CREATE TABLE products (
 CREATE TABLE orders (
     order_id INT PRIMARY KEY,
     customer_id INT NOT NULL,
-    address_id INT NOT NULL,
+    address_id INT,
     ordered_at TIMESTAMP NOT NULL,
     payment_method VARCHAR(30) NOT NULL,
     total_amount NUMERIC(10,2)
