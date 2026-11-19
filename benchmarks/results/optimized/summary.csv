@@ -1,0 +1,31 @@
+query_id,type,avg_ms,median_ms,min_ms,max_ms,scan_nodes
+R01,READ,1.656,1.552,1.491,1.926,Bitmap Heap Scan on products | Bitmap Index Scan on idx_products_title_trgm_cp3
+R02,READ,3.373,3.192,3.039,3.887,Seq Scan on categories | Seq Scan on products
+R03,READ,0.141,0.052,0.043,0.329,Index Only Scan using idx_reviews_product_rating_cp3 on product_reviews
+R04,READ,0.184,0.096,0.068,0.388,Bitmap Heap Scan on orders | Bitmap Index Scan on idx_orders_customer_date_cp3 | Index Only Scan using order_items_pkey on order_items
+R05,READ,0.453,0.279,0.274,0.807,Index Scan using idx_orders_shipped_date_cp3 on orders
+R06,READ,0.878,0.818,0.352,1.465,Index Only Scan using idx_order_items_seller_order_cp3 on order_items | Index Scan using orders_pkey on orders
+R07,READ,2.224,2.209,2.145,2.318,Seq Scan on products
+R08,READ,30.317,31.255,24.715,34.980,Seq Scan on order_items | Index Scan using idx_orders_date_cp3 on orders | Seq Scan on products
+R09,READ,28.855,28.898,26.678,30.990,Seq Scan on orders | Seq Scan on customers
+R10,READ,18.433,18.358,17.589,19.352,Index Scan using idx_orders_date_cp3 on orders | Index Only Scan using idx_cart_items_added_cp3 on cart_items | Seq Scan on products
+R11,READ,0.560,0.073,0.067,1.539,Index Only Scan using idx_order_items_product_id_cp3 on order_items | Index Only Scan using idx_order_items_order_product_cp3 on order_items
+R12,READ,70.925,71.056,70.609,71.110,Seq Scan on order_items | Seq Scan on products | Seq Scan on categories | Seq Scan on returns
+R13,READ,23.778,24.808,21.026,25.500,Seq Scan on addresses | Seq Scan on orders
+R14,READ,4.751,4.724,4.643,4.886,Seq Scan on products
+R15,READ,25.710,26.090,24.509,26.530,Seq Scan on order_items | Index Scan using idx_orders_date_cp3 on orders | Seq Scan on sellers
+R16,READ,5.322,5.401,4.506,6.060,Bitmap Heap Scan on product_reviews | Bitmap Index Scan on idx_reviews_body_trgm_cp3 | Seq Scan on products | Seq Scan on categories
+R17,READ,158.858,154.102,135.804,186.669,Seq Scan on product_reviews | Index Only Scan using idx_order_items_product_id_cp3 on order_items | Index Scan using idx_orders_customer_date_cp3 on orders
+R18,READ,7.328,7.142,6.944,7.899,Index Scan using idx_orders_date_cp3 on orders | Index Only Scan using idx_customers_city_cp3 on customers
+R19,READ,9.999,9.798,9.536,10.664,Seq Scan on categories | Bitmap Heap Scan on products | Bitmap Index Scan on idx_products_category_status_price_cp3 | Index Only Scan using idx_order_items_product_id_cp3 on order_items | Index Scan using orders_pkey on orders
+R20,READ,5.550,5.511,5.480,5.658,Seq Scan on orders
+R21,READ,1.029,1.004,1.001,1.081,Index Scan using idx_orders_date_cp3 on orders
+R22,READ,7.229,6.830,6.589,8.268,Index Scan using idx_orders_date_cp3 on orders
+R23,READ,0.073,0.072,0.061,0.087,Index Scan using order_items_pkey on order_items | Index Scan using orders_pkey on orders | Index Scan using products_pkey on products | Index Scan using sellers_pkey on sellers
+R24,READ,0.023,0.021,0.021,0.026,Index Scan using products_asin_key on products
+W01,WRITE,0.641,0.500,0.490,0.934,(no scan)
+W02,WRITE,0.856,0.613,0.601,1.353,Index Scan using products_pkey on products
+W03,WRITE,0.723,0.646,0.526,0.998,Seq Scan on categories | Bitmap Heap Scan on products | Bitmap Index Scan on idx_products_category_status_price_cp3
+W04,WRITE,49.457,34.999,30.874,82.499,(no scan)
+W05,WRITE,8.345,8.225,7.982,8.827,Index Scan using orders_pkey on orders
+W06,WRITE,2.928,2.712,2.670,3.403,Bitmap Heap Scan on cart_items | Bitmap Index Scan on idx_cart_items_added_cp3
